@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Supplier extends Model
 {
     use HasFactory;
+    protected $fillable = ['supplier_name', 'country'];
+
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
+    }
 }
