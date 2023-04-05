@@ -17,7 +17,8 @@ class SupplierFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'supplier_name'=>fake()->unique()->company,
+            'country'=>fake()->state,
         ];
     }
 }

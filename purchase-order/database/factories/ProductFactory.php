@@ -17,7 +17,9 @@ class ProductFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'brand'=>fake()->word,
+            'product_type'=>fake()->word,
+            'model'=>fake()->unique()->bothify('?????-#####'),
         ];
     }
 }
