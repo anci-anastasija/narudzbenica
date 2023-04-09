@@ -12,16 +12,16 @@ class Order extends Model
 
     public function product()
     {
-        return $this->belongsTo(Product::calss);
+        return $this->belongsTo(Product::class);
     }
 
     public function supplier()
     {
-        return $this->belongsTo(Supplier::calss);
+        return $this->belongsTo(Supplier::class);
     }
 
     public function user()
     {
-        return $this->belongsTo(User::calss);
+        return $this->belongsTo(User::class);
     }
 }
