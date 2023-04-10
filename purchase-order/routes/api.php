@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\SupplierController;
+use App\Http\Controllers\ProductController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -22,3 +24,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //Route::get('order', [OrderTestController::class, 'index']);
 
 Route::resource('orders', OrderController::class);
+Route::resource('suppliers', SupplierController::class);
+Route::resource('products', ProductController::class);
