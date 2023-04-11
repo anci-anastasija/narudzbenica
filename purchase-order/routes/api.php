@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\API\AuthController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -23,6 +24,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //Route::get('order/{id}', [OrderTestController::class, 'show']);
 //Route::get('order', [OrderTestController::class, 'index']);
 
-Route::resource('orders', OrderController::class);
+//Route::resource('orders', OrderController::class);
 Route::resource('suppliers', SupplierController::class);
 Route::resource('products', ProductController::class);
+Route::post('/register', [AuthController::class, 'register']);
