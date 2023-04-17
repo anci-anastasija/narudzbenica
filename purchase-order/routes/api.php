@@ -24,7 +24,13 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //Route::get('order/{id}', [OrderTestController::class, 'show']);
 //Route::get('order', [OrderTestController::class, 'index']);
 
-//Route::resource('orders', OrderController::class);
+//
 Route::resource('suppliers', SupplierController::class);
 Route::resource('products', ProductController::class);
 Route::post('/register', [AuthController::class, 'register']);
+Route::post('/login', [AuthController::class, 'login']);
+
+Route::group(['middleware' => ['auth:sanctum']], function () {
+    Route::post('logout', [AuthController::class, 'logout']);
+    Route::resource('orders', OrderController::class);
+});
