@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('order_description');
             $table->foreignId('product_id');
             $table->integer('quantity');
-            $table->integer('supplier_id');
-            $table->integer('user_id');
+            $table->foreignId('supplier_id');
+            $table->foreignId('user_id');
             $table->timestamps();
         });
     }
